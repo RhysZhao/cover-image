@@ -2,7 +2,7 @@
  * Author  rhys.zhao
  * Date  2023-05-30 17:57:59
  * LastEditors  rhys.zhao
- * LastEditTime  2023-05-30 19:10:32
+ * LastEditTime  2023-05-31 14:03:00
  * Description 主页
  */
 import { useState } from 'react';
@@ -28,7 +28,7 @@ function App() {
     html2canvas(exportDom).then((canvas) => {
       const base64 = canvas.toDataURL({ format: 'image/png', quality: 1, width: 12000, height: 4000 });
       binaryConverter.toBlob(base64).then((blobData) => {
-        binaryConverter.downloadFileByBlob(blobData, '封面');
+        binaryConverter.downloadFileByBlob(blobData, text || '封面');
       });
     });
   };
